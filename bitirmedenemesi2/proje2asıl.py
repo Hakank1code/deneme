@@ -3,7 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-veriler = pd.read_excel("denemeverilerifoton.xlsx")
+veriler = pd.read_excel("/mount/src/deneme/bitirmedenemesi2/denemeverilerifoton.xlsx", engine="openpyxl")
+
 
 maddeler = veriler["Element/Compound"].unique()
 matter_choose = st.selectbox("Madde seçiniz", maddeler)
@@ -38,3 +39,4 @@ if st.button("Hesapla"):
 
 
     st.pyplot(fig)
+
