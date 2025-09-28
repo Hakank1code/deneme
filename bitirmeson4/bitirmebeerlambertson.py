@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-veriler = pd.read_excel("denemeverilerifoton.xlsx")
+veriler = pd.read_excel("/mount/src/deneme/bitirmedenemesi2/denemeverilerifoton.xlsx", engine="openpyxl")
 
 
 maddeler = veriler["Element/Compound"].unique()
@@ -70,4 +70,5 @@ if st.button("Hesapla"):
     ax3.set_title("Doz–Mesafe + Beer–Lambert Birleşimi")
     ax3.legend()
     ax3.grid(True)
+
     st.pyplot(fig3)
