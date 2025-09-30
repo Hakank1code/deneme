@@ -28,7 +28,7 @@ if st.button("Hesapla"):
     # Beer–Lambert
     I_final = I_mesafe * np.exp(-mu * x)
 
-    st.success(f"100 birimden kalan: {I_final:.2f}")
+    st.success(f"100 birimden kalan: {I_final}")
 
     # ----------------------------
     # Grafik 1: Doz–Mesafe Yasası
@@ -72,3 +72,4 @@ if st.button("Hesapla"):
     ax3.grid(True)
 
     st.pyplot(fig3)
+
