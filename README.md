@@ -1,2 +1,2 @@
-# deneme
-beer lambert kodu denemesi
+# X-ray shielding simulation
+bu repository sadece deneme amaçlıdır
