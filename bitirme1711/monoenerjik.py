@@ -4,14 +4,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import periodictable
+import os  # <-- BU SATIRI EKLEYİN
 
 # --- Sayfa Ayarları ve Başlık ---
 st.set_page_config(page_title="X-ray attenuation calculator", layout="wide")
 st.title("X-ray attenuation calculator")
+
+# --- GÜVENLİ VE KESİN RESİM YÜKLEME ---
 try:
-    st.image("bitirmeresim.png", width=600)
-except FileNotFoundError:
-    st.warning("`bitirmeresim.png` dosyası bulunamadı.")
+    # Bu script'in bulunduğu klasörün tam yolunu al
+    base_path = os.path.dirname(__file__)
+    
+    # Resmin tam yolunu oluştur
+    image_path = os.path.join(base_path, "bitirmeresim.png")
+    
+    # Resmi tam yoluyla yükle
+    st.image(image_path, width=600)
+except Exception as e:
+    st.error(f"Resim yüklenemedi! Hata: {e}")
+    st.error(f"Aranan dosya yolu: {image_path}")
+# --- GÜVENLİ YÜKLEME SONU ---
+
 
 # --- Kullanıcı Girdilerini Kenar Çubuğuna Alma ---
 st.sidebar.header("System design parameters")
@@ -220,3 +233,4 @@ if final_intensity is not None and d1 > 0 and d2 > 0:
 else:
 
     st.info("Please provide valid distance and thickness values to generate the graph.")
+
