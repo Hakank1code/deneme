@@ -218,4 +218,5 @@ if final_intensity is not None and d1 > 0 and d2 > 0:
     
     st.pyplot(fig)
 else:
+
     st.info("Please provide valid distance and thickness values to generate the graph.")
